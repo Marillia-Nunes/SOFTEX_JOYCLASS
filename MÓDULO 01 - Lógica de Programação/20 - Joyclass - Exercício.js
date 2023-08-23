@@ -38,7 +38,10 @@ p5.filho = p9;
 p6.filho = p10;
 p7.filho = p11;
 
-
 cabeca = p1;
 
-console.log(cabeca)
+let atual = cabeca;
+while (atual != null) {
+    console.group(`Nome: ${atual.nome}, Idade: ${atual.idade}`);
+    atual = atual.filho;
+}
