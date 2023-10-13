@@ -1,30 +1,32 @@
-console.log()
-const prompt = require('prompt-sync')();
-const operador = prompt('Escolha o operador: \n( + ) Adição \n( - ) Subtração \n( * ) Multiplicação \n( / ) Divisão \n\n');
+class Igreja {
+  constructor(denominacao, nome, localidade) {
+    this.denominacao = denominacao;
+    this.nome = nome;
+    this.localidade = localidade;    
+  }
 
-console.log()
-const numero1 = parseFloat(prompt('Digite o primeiro número: '));
-const numero2 = parseFloat(prompt('Digite o segundo número: '));
-console.log()
+  acolher() {
+    this.acolhe = true;
+    console.log(`A igreja ${this.denominacao}  ${this.nome} do ${this.localidade} tem por missão acolher toda a comunidade.`);
+  }
 
-let resultado;
-let restoDivisao;
+  evangelizar() {
+    this.evangeliza = false;
+    console.log(`A igreja ${this.denominacao}  ${this.nome} do ${this.localidade} evangeliza pelas ruas da cidade.`);
+  }
 
-
-if (operador == '+') {
-    resultado = numero1 + numero2;
-    console.log(`O resultado da soma é: ${resultado}`);
-} else if (operador == '-') {
-    resultado = numero1 - numero2;
-    console.log(`O resultado da subtração é: ${resultado}`);
-} else if (operador == '*') {
-    resultado = numero1 * numero2;
-    console.log(`O resultado da multiplicação é: ${resultado}`);
-} else {
-    resultado = numero1 / numero2;
-    restoDivisao = numero1 % numero2;
-    console.log(`O resultado da divisão é: ${Math.trunc(resultado)}\nA divisão possui o resto: ${restoDivisao}`);
+  orientar() {
+    if (this.orienta) {
+      console.log(`A igreja ${this.denominacao}  ${this.nome} do ${this.localidade} orienta e acolhe mães carentes.`);
+    } else {
+      console.log(`A igreja ${this.denominacao}  ${this.nome} do ${this.localidade} não consegue orientar e acolher as mães carentes não localizadas.`);
+    }
+  }
 }
-console.log()
+
+const igreja01 = new Igreja('Católica', 'Nossa Senhora das Graças', 'Engenho do Meio');
+igreja01.acolher();
+igreja01.evangelizar();
+igreja01.orientar();
 
 
