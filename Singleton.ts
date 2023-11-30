@@ -1,6 +1,6 @@
 class SistemaSeguranca {
     private static instancia: SistemaSeguranca;
-    private senhaBaseSecreta: string = "senhaSuperSecreta";
+    private senhaBaseSecreta: string = "senhaDeSeguranca";
 
     private constructor() {}
 
@@ -13,9 +13,9 @@ class SistemaSeguranca {
 
     public acessarBaseSecreta(senha: string): void {
         if (senha === this.senhaBaseSecreta) {
-            console.log("Acesso concedido à Base Secreta.");
+            console.log("Acesso concedido.");
         } else {
-            console.log("Acesso negado. Senha incorreta.");
+            console.log("Acesso negado.");
         }
     }
 }
@@ -23,6 +23,6 @@ class SistemaSeguranca {
 // Demonstração de uso
 const sistemaSeguranca = SistemaSeguranca.getInstance();
 
-// Agente tenta acessar a Base Secreta
+// Tentativa de acesso à Base Secreta
 sistemaSeguranca.acessarBaseSecreta("senhaIncorreta"); // Acesso negado
-sistemaSeguranca.acessarBaseSecreta("senhaSuperSecreta"); // Acesso concedido
+sistemaSeguranca.acessarBaseSecreta("senhaDeSeguranca"); // Acesso concedido
