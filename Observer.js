@@ -79,9 +79,6 @@ while ((userInput = readlineSync.question("Digite uma linha de texto (ou 'EOF' p
 // Remove o último incremento de lineNumber
 lineNumber--;
 
-// Remove Observer para não receber notificações desnecessárias
-textEditor.removeObserver(textEditor.observers[0]);
-
 // Salva e exibe o conteúdo
 textEditor.saveToFile();
 textEditor.displayContent();
