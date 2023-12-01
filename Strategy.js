@@ -1,31 +1,31 @@
 const readlineSync =  require('readline-sync');
 
 // Interface Strategy
-class OperationStrategy {
+class OperacaoStrategy {
     execute(num1, num2) {}
   }
   
   // Classes concretas que implementam a Strategy
-  class AdditionStrategy extends OperationStrategy {
+  class AdicaoStrategy extends OperacaoStrategy {
     execute(num1, num2) {
       return num1 + num2;
     }
   }
   
-  class SubtractionStrategy extends OperationStrategy {
+  class SubtracaoStrategy extends OperacaoStrategy {
     execute(num1, num2) {
       return num1 - num2;
     }
   }
   
-  class MultiplicationStrategy extends OperationStrategy {
+  class MultiplicacaoStrategy extends OperacaoStrategy {
     execute(num1, num2) {
       return num1 * num2;
     }
   }
   
   // Contexto que utiliza a Strategy
-  class Calculator {
+  class Calculadora {
     constructor(strategy) {
       this.strategy = strategy;
     }
@@ -34,27 +34,27 @@ class OperationStrategy {
       this.strategy = strategy;
     }
   
-    calculate(num1, num2) {
+    calcular(num1, num2) {
       return this.strategy.execute(num1, num2);
     }
   }
   
   // Exemplo de uso
-  const num1 = parseInt(readlineSync.question("Digite o primeiro número:"));
-  const num2 = parseInt(readlineSync.question("Digite o segundo número:"));
-  const operation = readlineSync.question("Digite a operação (+, -, *):");
+  const num1 = parseInt(readlineSync.question("Primeiro número: "));
+  const num2 = parseInt(readlineSync.question("Segundo número: "));
+  const operation = readlineSync.question("Operação (+, -, *): ");
   
   let strategy;
   
   switch (operation) {
     case '+':
-      strategy = new AdditionStrategy();
+      strategy = new AdicaoStrategy();
       break;
     case '-':
-      strategy = new SubtractionStrategy();
+      strategy = new SubtracaoStrategy();
       break;
     case '*':
-      strategy = new MultiplicationStrategy();
+      strategy = new MultiplicacaoStrategy();
       break;
     default:
       console.log("Operação inválida");
@@ -62,7 +62,7 @@ class OperationStrategy {
   }
   
   if (strategy) {
-    const calculator = new Calculator(strategy);
-    const result = calculator.calculate(num1, num2);
-    console.log(`Resultado da operação: ${result}`);
+    const calculadora = new Calculadora(strategy);
+    const result = calculadora.calcular(num1, num2);
+    console.log(`Resultado: ${result}`);
   }
