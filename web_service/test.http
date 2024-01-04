@@ -1,0 +1,35 @@
+### Listar usuarios
+GET http://localhost:8080/usuarios
+
+
+####
+#### Localizar por id
+GET http://localhost:8080/usuarios/1
+
+
+####
+#### Adicionar
+POST http://localhost:8080/usuarios
+Content-Type: application/json
+
+{
+    "nome": "João da Silva"
+}
+
+
+####
+#### Alterar
+PUT http://localhost:8080/usuarios/2
+Content-Type: application/json
+
+{
+    "nome": "Mara da Silva"
+}
+
+
+####
+#### Deletar
+DELETE http://localhost:8080/usuarios/2
+
+
+###
